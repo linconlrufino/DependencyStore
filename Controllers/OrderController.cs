@@ -9,7 +9,6 @@ namespace DependencyStore.Controllers;
 
 public class OrderController : ControllerBase
 {
-
     private readonly ICustomerRepository _customerRepository;
     private readonly IDeliveryFeeService _deliveryFeeService;
     private readonly IPromoCodeRepository _promoCoderepository;
