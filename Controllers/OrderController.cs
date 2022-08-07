@@ -13,12 +13,7 @@ public class OrderController : ControllerBase
     public async Task<IActionResult> Place(string customerId, string zipCode, string promoCode, int[] products)
     {
         // #1 - Recupera o cliente
-        Customer customer = null;
-        await using (var conn = new SqlConnection("CONN_STRING"))
-        {
-            const string query = "SELECT [Id], [Name], [Email] FROM CUSTOMER WHERE ID=@id";
-            customer = await conn.QueryFirstAsync<Customer>(query, new { id = customerId });
-        }
+        
 
         // #2 - Calcula o frete
         decimal deliveryFee = 0;
